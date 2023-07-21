@@ -8,47 +8,76 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] intArray = new int[4];
+        String[] companies = {"Amazon", "Google", "Microsoft", "Facebook"};
 
-        intArray[0] = 10;
-        intArray[1] = 20;
-
-        System.out.println("Array of integers: " + intArray);
-        System.out.println("getClass() representation: " + intArray.getClass());
-        System.out.println("toString() representation: " + intArray.toString());
+        System.out.println("Array contents: " + Arrays.toString(companies));
 
         System.out.println();
 
-        System.out.println("toString() representation: " + Arrays.toString(intArray));
-        System.out.println();
-
-        float[] floatArray = new float[6];
-
-        floatArray[0] = 10.5f;
-        floatArray[3] = 20.5f;
-
-        System.out.println("Array of float: " + floatArray);
-        System.out.println("toString() representation: " + floatArray.toString());
-        System.out.println("getClass() representation: " + floatArray.getClass());
+        System.out.println("companies[0]: " + companies[0]);
+        System.out.println("companies[1]: " + companies[1]);
+        System.out.println("companies[2]: " + companies[2]);
+        System.out.println("companies[3]: " + companies[3]);
 
         System.out.println();
 
-        System.out.println("toString() representation: " + Arrays.toString(floatArray));
-        System.out.println();
+//        System.out.println("companies[4]: " + companies[4]); // java.lang.ArrayIndexOutOfBoundsException
 
-        String[] stringArray = new String[7];
+        System.out.println("companies[-1]: " + companies[-1]); // java.lang.ArrayIndexOutOfBoundsException
 
-        stringArray[1] = "Good";
-        stringArray[2] = "Morning";
+//        String[] companies = {};
+//
+//        String[] otherCompanies = new String[0];
+//
+//        System.out.println("companies.length: " + companies.length);
+//        System.out.println("otherCompanies.length: " + otherCompanies.length);
+//
+//        companies[0] = "Skillsoft"; // java.lang.ArrayIndexOutOfBoundsException
 
-        System.out.println("Array of strings: " + stringArray);
-        System.out.println("toString() representation: " + stringArray.toString());
-        System.out.println("getClass() representation: " + stringArray.getClass());
+//        otherCompanies[0] = "Skillsoft"; // java.lang.ArrayIndexOutOfBoundsException
 
-        System.out.println();
+//        String[] companies = new String[]; // java: array dimension missing
+//
+//        companies[0] = "Amazon";
 
-        System.out.println("toString() representation: " + Arrays.toString(stringArray));
-        System.out.println();
+//        int[] intArray = new int[4];
+//
+//        intArray[0] = 10;
+//        intArray[1] = 20;
+//
+//        float[] floatArray = new float[6];
+//        floatArray[0] = 10.5f;
+//        floatArray[3] = 20.5f;
+//
+//        String[] stringArray = new String[7];
+//        stringArray[1] = "Good";
+//        stringArray[2] = "Morning";
+//
+//        Date[] dateArray = new Date[10];
+//        dateArray[1] = Calendar.getInstance().getTime();
+//        dateArray[2] = Calendar.getInstance().getTime();
+//
+//        System.out.println("intArray instanceof Object: " + (intArray instanceof Object));
+//        System.out.println("floatArray instanceof Object: " + (floatArray instanceof Object));
+//        System.out.println("stringArray instanceof Object: " + (stringArray instanceof Object));
+//        System.out.println("dateArray instanceof Object: " + (dateArray instanceof Object));
+//
+//        System.out.println();
+//
+//        System.out.println("\nintArray.toString(): " + Arrays.toString(intArray));
+//        System.out.println("intArray.length: " + intArray.length);
+//
+//        System.out.println("\nfloatArray.toString(): " + Arrays.toString(floatArray));
+//        System.out.println("floatArray.length: " + floatArray.length);
+//
+//        System.out.println("\nstringArray.toString(): " + Arrays.toString(stringArray));
+//        System.out.println("stringArray.length: " + stringArray.length);
+//
+//        System.out.println("\ndateArray.toString(): " + Arrays.toString(dateArray));
+//        System.out.println("dateArray.length: " + dateArray.length);
+//
+//        System.out.println();
+
     }
 }
 
