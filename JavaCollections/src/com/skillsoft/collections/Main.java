@@ -4,68 +4,55 @@ import java.util.Arrays;
 
 public class Main {
 
-    private static String[] stringArray = new String[5];
-    private static int lastIndex = 0;
-
-    private static void addString(String element) {
-        if (lastIndex >= stringArray.length) {
-            System.out.println("Cannot add element, no room in array!");
-
-            return;
-        }
-
-        stringArray[lastIndex++] = element;
-    }
-
-    private static void deleteString(int index) {
-        if (index >= stringArray.length) {
-            System.out.println("Index out of bounds, cannot delete element");
-
-            return;
-        }
-
-        stringArray[index] = null;
-
-        int currentIndex = index;
-
-        for (int i = currentIndex; i < stringArray.length - 1; i++) {
-            stringArray[currentIndex] = stringArray[currentIndex + 1];
-            currentIndex++;
-        }
-
-        lastIndex--;
-    }
-
     public static void main(String[] args) {
 
-        addString("Amazon");
-        System.out.println("Array contents: " + Arrays.toString(stringArray));
+//        int[][] multidimensionalArray = new int[3][4];
 
-        System.out.println();
+//        System.out.println("**** String representation of outer array");
+//        System.out.println(Arrays.toString(multidimensionalArray));
 
-        addString("Skillsoft");
-        System.out.println("Array contents: " + Arrays.toString(stringArray));
+//        multidimensionalArray[0][0] = 100;
+//        multidimensionalArray[1][1] = 200;
+//        multidimensionalArray[2][2] = 300;
+//
+//        System.out.println("\n**** Iterating over elements in the outer array");
+//        for (int[] intArray : multidimensionalArray) {
+//            System.out.println(Arrays.toString(intArray));
+//        }
 
-        System.out.println();
+//        int[][][] multidimensionalArray = new int[3][4][2];
+//
+//        System.out.println("\n***** Iterating over multiple dimensions");
+//        for (int[][] int2dArray : multidimensionalArray) {
+//            System.out.print("[");
+//            for (int[] intArray : int2dArray) {
+//                System.out.print(Arrays.toString(intArray));
+//            }
+//            System.out.println("]");
+//        }
 
-        addString("SumTotal");
-        System.out.println("Array contents: " + Arrays.toString(stringArray));
+//        String[][] multidimensionalStringArray = new String[2][3];
+//
+//        multidimensionalStringArray[1][2] = "Harry";
+//        multidimensionalStringArray[0][1] = "Ron";
+//        multidimensionalStringArray[1][0] = "Hermione";
 
-        System.out.println();
+        String[][] multidimensionalStringArray = new String[3][]; // Jagged Array
 
-        addString("Suzuki");
-        System.out.println("Array contents: " + Arrays.toString(stringArray));
+//        multidimensionalStringArray[1][2] = "Harry"; // java.lang.NullPointerException
 
-        System.out.println();
+        multidimensionalStringArray[0] = new String[2];
+        multidimensionalStringArray[1] = new String[3];
+        multidimensionalStringArray[2] = new String[4];
 
-        deleteString(0);
-        System.out.println("Array contents: " + Arrays.toString(stringArray));
+        multidimensionalStringArray[0][0] = "Harry";
+        multidimensionalStringArray[1][2] = "Ron";
+        multidimensionalStringArray[2][3] = "Hermione";
 
-        deleteString(1);
-        System.out.println("Array contents: " + Arrays.toString(stringArray));
-
-        addString("Optum");
-        System.out.println("Array contents: " + Arrays.toString(stringArray));
+        System.out.println("\n***** Iterating over multiple dimensions");
+        for (String[] stringArray : multidimensionalStringArray) {
+            System.out.println(Arrays.toString(stringArray));
+        }
     }
 }
 
