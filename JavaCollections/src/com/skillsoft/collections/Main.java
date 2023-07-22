@@ -1,70 +1,96 @@
 package com.skillsoft.collections;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Arrays;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-//        ArrayList arrayList = new ArrayList(); // Raw ArrayList
-//        List arrayList = new ArrayList(); // isEmpty(), add(), size(), remove(), contains() are part of the List interface
-//        Collection arrayList = new ArrayList(); // isEmpty(), add(), size(), remove(), contains() are part of the Collection interface
-        Iterable arrayList = new ArrayList(); // isEmpty(), add(), size(), remove(), contains() are not part of the Iterable interface
+        List list = new ArrayList();
 
-        System.out.println("ArrayList initial contents: " + arrayList);
-        System.out.println("ArrayList isEmpty(): " + arrayList.isEmpty());
+        System.out.println("***********Adding string elements");
 
-        System.out.println();
+        list.add("EUR");
+        list.add("USD");
 
-        System.out.println("***********Adding elements");
+        for (int i = 0; i < list.size(); i++) {
 
-        arrayList.add("EUR");
-        arrayList.add("USD");
-        arrayList.add("GBP");
-        arrayList.add("JPY");
-        arrayList.add("INR");
+            Object object = list.get(i);
 
-        System.out.println("ArrayList contents: " + arrayList);
-        System.out.println("ArrayList size: " + arrayList.size());
-        System.out.println("ArrayList isEmpty(): " + arrayList.isEmpty());
+            System.out.println(object.getClass());
+            System.out.println(object);
+        }
 
-        System.out.println("***********Removing elements");
+        System.out.println("***********Adding elements of any data type");
 
-        arrayList.remove("EUR");
-        arrayList.remove("GBP");
+        // NOTE: That primitive types added to the list are converted to object types
+        // This can be seen when we print the class of the objects below
+        list.add(12);
+        list.add(544);
+        list.add(452.45);
+        list.add(true);
+        list.add(Calendar.getInstance().getTime());
 
-        System.out.println("ArrayList contents: " + arrayList);
-        System.out.println("ArrayList size: " + arrayList.size());
-        System.out.println("ArrayList isEmpty(): " + arrayList.isEmpty());
+        for (Object object: list) {
 
-        System.out.println();
+            System.out.println(object.getClass());
+            System.out.println(object);
+        }
 
-        System.out.println("***********Checking for elements");
+        // NOTE: In order to use specific elements you need to cast the elements
+        // to be of the right type
+        int result = (int) list.get(2) + (int) list.get(3);
 
-        System.out.println("ArrayList contains USD: " + arrayList.contains("USD"));
-        System.out.println("ArrayList contains EUR: " + arrayList.contains("EUR"));
-        System.out.println("ArrayList contains JPY: " + arrayList.contains("JPY"));
+        System.out.println("Result: " + result);
 
-        System.out.println("ArrayList size: " + arrayList.size());
+        // NOTE: It is possible to get this cast wrong! There is no compile time check
+        // for the type of object that you add to the list or retrieve from the list
+        int oneMoreResult = (int) list.get(4) + (int) list.get(5); // java.lang.ClassCastException
 
-        System.out.println();
+        System.out.println("One more result: " + oneMoreResult);
 
-//        ArrayList arrayList = new ArrayList();
 
-//        System.out.println("ArrayList class: " + arrayList.getClass());
+//        Collection linkedList = new LinkedList();
+//
+//        System.out.println("LinkedList initial contents: " + linkedList);
+//        System.out.println("LinkedList isEmpty(): " + linkedList.isEmpty());
 //
 //        System.out.println();
 //
-//        System.out.println("ArrayList instanceof List: "
-//                + (arrayList instanceof List));
-//        System.out.println("ArrayList instanceof Collection: "
-//                + (arrayList instanceof Collection));
-//        System.out.println("ArrayList instanceof Iterable: "
-//                + (arrayList instanceof Iterable));
-
+//        System.out.println("*************Adding elements");
+//
+//        linkedList.add("EUR");
+//        linkedList.add("USD");
+//        linkedList.add("GBP");
+//        linkedList.add("JPY");
+//        linkedList.add("INR");
+//
+//        System.out.println("LinkedList contents: " + linkedList);
+//        System.out.println("LinkedList size: " + linkedList.size());
+//        System.out.println("LinkedList isEmpty(): " + linkedList.isEmpty());
+//
+//        System.out.println();
+//
+//        System.out.println("*************Removing elements");
+//
+//        linkedList.remove("EUR");
+//        linkedList.remove("GBP");
+//
+//        System.out.println("LinkedList contents: " + linkedList);
+//        System.out.println("LinkedList size: " + linkedList.size());
+//        System.out.println("LinkedList isEmpty(): " + linkedList.isEmpty());
+//
+//        System.out.println();
+//
+//        System.out.println("*************Removing elements");
+//
+//        System.out.println("LinkedList contains USD: " + linkedList.contains("USD"));
+//        System.out.println("LinkedList contains EUR: " + linkedList.contains("EUR"));
+//        System.out.println("LinkedList contains JPY: " + linkedList.contains("JPY"));
+//
+//        System.out.println("LinkedList size: " + linkedList.size());
+//
+//        System.out.println();
     }
 }
 
@@ -85,3 +111,6 @@ public class Main {
 
 // ArrayList Documentation
 // https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html
+
+// Linked list
+// Implements the list using a doubly-linked list
