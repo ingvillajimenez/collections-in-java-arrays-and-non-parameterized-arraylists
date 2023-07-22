@@ -1,58 +1,70 @@
 package com.skillsoft.collections;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) {
 
-//        int[][] multidimensionalArray = new int[3][4];
+//        ArrayList arrayList = new ArrayList(); // Raw ArrayList
+//        List arrayList = new ArrayList(); // isEmpty(), add(), size(), remove(), contains() are part of the List interface
+//        Collection arrayList = new ArrayList(); // isEmpty(), add(), size(), remove(), contains() are part of the Collection interface
+        Iterable arrayList = new ArrayList(); // isEmpty(), add(), size(), remove(), contains() are not part of the Iterable interface
 
-//        System.out.println("**** String representation of outer array");
-//        System.out.println(Arrays.toString(multidimensionalArray));
+        System.out.println("ArrayList initial contents: " + arrayList);
+        System.out.println("ArrayList isEmpty(): " + arrayList.isEmpty());
 
-//        multidimensionalArray[0][0] = 100;
-//        multidimensionalArray[1][1] = 200;
-//        multidimensionalArray[2][2] = 300;
+        System.out.println();
+
+        System.out.println("***********Adding elements");
+
+        arrayList.add("EUR");
+        arrayList.add("USD");
+        arrayList.add("GBP");
+        arrayList.add("JPY");
+        arrayList.add("INR");
+
+        System.out.println("ArrayList contents: " + arrayList);
+        System.out.println("ArrayList size: " + arrayList.size());
+        System.out.println("ArrayList isEmpty(): " + arrayList.isEmpty());
+
+        System.out.println("***********Removing elements");
+
+        arrayList.remove("EUR");
+        arrayList.remove("GBP");
+
+        System.out.println("ArrayList contents: " + arrayList);
+        System.out.println("ArrayList size: " + arrayList.size());
+        System.out.println("ArrayList isEmpty(): " + arrayList.isEmpty());
+
+        System.out.println();
+
+        System.out.println("***********Checking for elements");
+
+        System.out.println("ArrayList contains USD: " + arrayList.contains("USD"));
+        System.out.println("ArrayList contains EUR: " + arrayList.contains("EUR"));
+        System.out.println("ArrayList contains JPY: " + arrayList.contains("JPY"));
+
+        System.out.println("ArrayList size: " + arrayList.size());
+
+        System.out.println();
+
+//        ArrayList arrayList = new ArrayList();
+
+//        System.out.println("ArrayList class: " + arrayList.getClass());
 //
-//        System.out.println("\n**** Iterating over elements in the outer array");
-//        for (int[] intArray : multidimensionalArray) {
-//            System.out.println(Arrays.toString(intArray));
-//        }
-
-//        int[][][] multidimensionalArray = new int[3][4][2];
+//        System.out.println();
 //
-//        System.out.println("\n***** Iterating over multiple dimensions");
-//        for (int[][] int2dArray : multidimensionalArray) {
-//            System.out.print("[");
-//            for (int[] intArray : int2dArray) {
-//                System.out.print(Arrays.toString(intArray));
-//            }
-//            System.out.println("]");
-//        }
+//        System.out.println("ArrayList instanceof List: "
+//                + (arrayList instanceof List));
+//        System.out.println("ArrayList instanceof Collection: "
+//                + (arrayList instanceof Collection));
+//        System.out.println("ArrayList instanceof Iterable: "
+//                + (arrayList instanceof Iterable));
 
-//        String[][] multidimensionalStringArray = new String[2][3];
-//
-//        multidimensionalStringArray[1][2] = "Harry";
-//        multidimensionalStringArray[0][1] = "Ron";
-//        multidimensionalStringArray[1][0] = "Hermione";
-
-        String[][] multidimensionalStringArray = new String[3][]; // Jagged Array
-
-//        multidimensionalStringArray[1][2] = "Harry"; // java.lang.NullPointerException
-
-        multidimensionalStringArray[0] = new String[2];
-        multidimensionalStringArray[1] = new String[3];
-        multidimensionalStringArray[2] = new String[4];
-
-        multidimensionalStringArray[0][0] = "Harry";
-        multidimensionalStringArray[1][2] = "Ron";
-        multidimensionalStringArray[2][3] = "Hermione";
-
-        System.out.println("\n***** Iterating over multiple dimensions");
-        for (String[] stringArray : multidimensionalStringArray) {
-            System.out.println(Arrays.toString(stringArray));
-        }
     }
 }
 
@@ -61,3 +73,15 @@ public class Main {
 
 // Array
 // Collection of objects, where the type and number of objects are specified upfront
+
+// List
+// Ordered collection of objects
+
+// ArrayList
+// Specific implementation of a list where arrays are used to stored elements
+
+// Interface Hierarchy
+// Iterable -> Collection -> List
+
+// ArrayList Documentation
+// https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html
